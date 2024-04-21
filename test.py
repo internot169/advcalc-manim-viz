@@ -109,3 +109,5 @@ class GraphExample(ThreeDScene):
         self.play(Unwrite(axes), Unwrite(labels), Uncreate(lineAB), Uncreate(lineDE))
         # self.begin_ambient_camera_rotation(rate=0.1)
         self.wait()
+
+#manim -pql test.py GraphExample
