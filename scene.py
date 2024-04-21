@@ -37,11 +37,13 @@ class Main(ThreeDScene):
         dot_3 = Dot3D(point=[0, 1, -2], radius=0.1, color=ORANGE)
         
         
-        line = axes.plot_parametric_curve(lambda u: np.array([
-                1+u,
-                3*u,
-                4-(5*u)
-            ]), use_smoothing = False)
+        line = axes.plot_parametric_curve(
+            lambda u: np.array([
+                1 + u,
+                3 * u,
+                4 - (5 * u)
+            ]), color=RED, t_range = np.array([0, 1, 0.001])
+        ).set_shade_in_3d(True)
         
         self.add(dot_1, dot_2)
         self.add(line)
@@ -61,11 +63,13 @@ class Main(ThreeDScene):
         dot_5 = Dot3D(point=axes.coords_to_point(7, 0, -1), radius=0.1, color=PURPLE)
         self.add(dot_4, dot_5)
         
-        line2 = axes.plot_parametric_curve(lambda u: np.array([
+        line2 = axes.plot_parametric_curve(
+            lambda u: np.array([
                 4+(3*u),
                 -1+u,
                 -1-(2*u)
-            ]), use_smoothing = False)
+            ]), color=RED, t_range = np.array([0, 1, 0.001])
+        ).set_shade_in_3d(True)
         self.add(line)
         self.add(line2)
         self.wait(7.0)
